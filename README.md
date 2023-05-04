@@ -99,9 +99,9 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 11 p.m.
 
-Finish time: _____
+Finish time: 12:30 p.m.
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1.5 hours
 
 ## WRRC
 
