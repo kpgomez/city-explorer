@@ -91,6 +91,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+## Feature Estimates
 
 Name of feature: Set up your React repository & API keys
 
@@ -101,3 +102,7 @@ Start time: 11 p.m.
 Finish time: _____
 
 Actual time needed to complete: _____
+
+## WRRC
+
+![WRRC](./src/Screenshot%202023-05-03%20at%2011.48.12%20PM.png)
