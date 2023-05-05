@@ -108,3 +108,5 @@ Actual time needed to complete: 1.5 hours
 ![WRRC](./src/Screenshot%202023-05-03%20at%2011.48.12%20PM.png)
 
 [Class Demo](https://github.com/codefellows/seattle-code-301n30/tree/main/class-05/demo/city-explorer-react)
+
+[Class Demo](https://github.com/codefellows/seattle-code-301n30/tree/main/class-06/demo/locationIQ-demo)
