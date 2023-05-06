@@ -103,6 +103,48 @@ Finish time: 12:30 p.m.
 
 Actual time needed to complete: 1.5 hours
 
+## Feature Estimates
+
+Name of feature: Locations
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 9:35 p.m.
+
+Finish time: 12:00 p.m.
+
+Actual time needed to complete: 2.5 hours
+
+## Feature Estimates
+
+Name of feature: Map
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 3:15 p.m.
+
+Finish time: 5:15 p.m.
+
+Actual time needed to complete: 2 hours
+
+## Feature Estimates
+
+Name of feature: Errors
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 5:25 p.m.
+
+Finish time: 5:15 p.m.
+
+Actual time needed to complete: 2 hours
+
+
+
+## Trello - Project Management Tool
+
+[url](https://trello.com/b/eNIWRXG2/city-explorer-lab)
+
 ## WRRC
 
 ![WRRC](./src/Screenshot%202023-05-03%20at%2011.48.12%20PM.png)
