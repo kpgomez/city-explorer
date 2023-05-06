@@ -115,6 +115,18 @@ Finish time: 12:00 p.m.
 
 Actual time needed to complete: 2.5 hours
 
+## Feature Estimates
+
+Name of feature: Map
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 3:15 p.m.
+
+Finish time:  p.m.
+
+Actual time needed to complete: 
+
 ## Trello - Project Management Tool
 
 [url](https://trello.com/b/eNIWRXG2/city-explorer-lab)
