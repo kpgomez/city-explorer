@@ -135,9 +135,9 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 5:25 p.m.
 
-Finish time: 5:15 p.m.
+Finish time: 6 p.m.
 
-Actual time needed to complete: 2 hours
+Actual time needed to complete: 30 minutes
 
 
 
@@ -152,3 +152,5 @@ Actual time needed to complete: 2 hours
 [Class Demo](https://github.com/codefellows/seattle-code-301n30/tree/main/class-05/demo/city-explorer-react)
 
 [Class Demo](https://github.com/codefellows/seattle-code-301n30/tree/main/class-06/demo/locationIQ-demo)
+
+[this.bind](https://www.topcoder.com/thrive/articles/event-handling-in-react-js#:~:text=We%20can%20call%20multiple%20functions,an%20example%20which%20demonstrates%20this.)
