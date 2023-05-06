@@ -24,19 +24,26 @@ class Main extends React.Component {
 
     getLocation = async (e) => {
         e.preventDefault();
-        const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_COORDINATE_KEY}&q=${this.state.searchQuery}&format=json`;
-        console.log(url);
-        const response = await axios.get(url);
-        console.log(response.data[0]);
-        this.setState({
-            displayInfo: true,
-            city: response.data[0]
+        try {
+            const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_COORDINATE_KEY}&q=${this.state.searchQuery}&format=json`;
+            console.log(url);
+            const response = await axios.get(url);
+            console.log(response.data[0]);
+            this.setState({
+                displayInfo: true,
+                city: response.data[0]
 
-        });
-        // this.getMap(response.data[0].lat, response.data[0].lon);
+            });
+            // this.getMap(response.data[0].lat, response.data[0].lon);
+        }
+        catch(error){
+            document.write(error);
+            document.write(": Unable to geocode");
+        }
     }
 
-    getMap = async (lat,lon) => {
+
+    getMap = async (lat, lon) => {
         const imageURL = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_COORDINATE_KEY}&center=${lat},${lon}&zoom=5`;
         console.log(imageURL);
         const response = await axios.get(imageURL);
@@ -46,7 +53,7 @@ class Main extends React.Component {
         })
     }
 
-    submitHandler(e){
+    submitHandler(e) {
         this.getLocation(e);
     }
 

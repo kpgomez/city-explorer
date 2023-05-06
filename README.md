@@ -123,9 +123,23 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 3:15 p.m.
 
-Finish time:  p.m.
+Finish time: 5:15 p.m.
 
-Actual time needed to complete: 
+Actual time needed to complete: 2 hours
+
+## Feature Estimates
+
+Name of feature: Errors
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 5:25 p.m.
+
+Finish time: 5:15 p.m.
+
+Actual time needed to complete: 2 hours
+
+
 
 ## Trello - Project Management Tool
 
