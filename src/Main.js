@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import './Main.css';
 import { Form, Button } from "react-bootstrap";
+import Weather from './Weather';
+
 
 
 class Main extends React.Component {
@@ -11,7 +13,8 @@ class Main extends React.Component {
             displayInfo: false,
             searchQuery: '',
             city: {},
-            mapImg: ''
+            mapImg: '',
+            weatherData: []
         }
 
     }
@@ -35,8 +38,10 @@ class Main extends React.Component {
 
             });
             // this.getMap(response.data[0].lat, response.data[0].lon);
+            console.log(response.data[0].lat);
+            console.log(response.data[0].lon);
         }
-        catch(error){
+        catch (error) {
             document.write(error);
             document.write(": Unable to geocode");
         }
@@ -55,13 +60,26 @@ class Main extends React.Component {
 
     submitHandler(e) {
         this.getLocation(e);
+        this.apiTest();
     }
 
+    apiTest = async () => {
+        try {
+            const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+            const response = await axios.get(url);
+            this.setState({ weatherData: response.data },
+                () => console.log(this.state.weatherData))
+        }
+        catch (error) {
+            console.error(error.message);
+        }
+    }
 
     render() {
         return (
             <>
                 <Form onSubmit={this.submitHandler.bind(this)}>
+                {/* <Form onSubmit={this.apiTest}> */}
                     <Form.Group>
                         <Form.Label>Enter a name of a city</Form.Label>
                         <Form.Control type="text" onChange={this.handleInput}></Form.Control>
@@ -79,6 +97,7 @@ class Main extends React.Component {
                     }
                     {/* </form> */}
                 </Form>
+                <Weather weatherData={this.state.weatherData}/>
             </>
 
         )
