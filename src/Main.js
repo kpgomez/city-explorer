@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from 'react-dom/client';
 import axios from "axios";
 import './Main.css';
 import { Form, Button } from "react-bootstrap";
@@ -12,7 +13,7 @@ class Main extends React.Component {
         this.state = {
             displayInfo: false,
             searchQuery: '',
-            city: {},
+            city: {},         
             mapImg: '',
             weatherData: []
         }
@@ -37,7 +38,8 @@ class Main extends React.Component {
                 city: response.data[0]
 
             });
-            // this.getMap(response.data[0].lat, response.data[0].lon);
+            console.log(this.state.city);
+            this.getMap(response.data[0].lat, response.data[0].lon);
             console.log(response.data[0].lat);
             console.log(response.data[0].lon);
         }
@@ -50,22 +52,25 @@ class Main extends React.Component {
 
     getMap = async (lat, lon) => {
         const imageURL = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_COORDINATE_KEY}&center=${lat},${lon}&zoom=5`;
-        console.log(imageURL);
+        // console.log(imageURL);
         const response = await axios.get(imageURL);
-        console.log(response);
+        // console.log(response);
         this.setState({
-            mapImg: response
+            mapImg: response.data.data
         })
+        // console.log(this.state.mapImg)
     }
 
     submitHandler(e) {
         this.getLocation(e);
+        // this.getMap();
         this.apiTest();
     }
 
     apiTest = async () => {
         try {
-            const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+            // const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+            const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=Seattle`;
             const response = await axios.get(url);
             this.setState({ weatherData: response.data },
                 () => console.log(this.state.weatherData))
@@ -99,7 +104,6 @@ class Main extends React.Component {
                 </Form>
                 <Weather weatherData={this.state.weatherData}/>
             </>
-
         )
     }
 }
