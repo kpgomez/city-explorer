@@ -8,6 +8,7 @@
 p{
     font-weight: lighter;
 }
-.form-control{
+.form-control, .card.text{
     background-color: white;
+    color: red;
 }
