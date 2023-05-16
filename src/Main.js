@@ -5,19 +5,16 @@ import './Main.css';
 import { Form, Button } from "react-bootstrap";
 import Weather from './Weather';
 
-
-
 class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             displayInfo: false,
             searchQuery: '',
-            city: {},         
+            city: [],         
             mapImg: '',
             weatherData: []
         }
-
     }
 
     handleInput = (e) => {
@@ -26,64 +23,50 @@ class Main extends React.Component {
         );
     }
 
-    getLocation = async (e) => {
+    handleCitySearch = async (e) => {
         e.preventDefault();
-        try {
-            const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_COORDINATE_KEY}&q=${this.state.searchQuery}&format=json`;
-            console.log(url);
-            const response = await axios.get(url);
-            console.log(response.data[0]);
-            this.setState({
-                displayInfo: true,
-                city: response.data[0]
-
-            });
-            console.log(this.state.city);
-            this.getMap(response.data[0].lat, response.data[0].lon);
-            console.log(response.data[0].lat);
-            console.log(response.data[0].lon);
-        }
-        catch (error) {
-            document.write(error);
-            document.write(": Unable to geocode");
-        }
+        const url = `${process.env.REACT_APP_SERVER}/search?searchQuery=${this.state.searchQuery}`;
+        const response = await axios.get(url);
+        console.log(response.data[0]);
+        // this.setState({
+        //     city: response.data[0]}, 
+        //     () => console.log(this.state.city))
     }
+    
 
 
-    getMap = async (lat, lon) => {
-        const imageURL = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_COORDINATE_KEY}&center=${lat},${lon}&zoom=5`;
-        // console.log(imageURL);
-        const response = await axios.get(imageURL);
-        // console.log(response);
-        this.setState({
-            mapImg: response.data.data
-        })
-        // console.log(this.state.mapImg)
-    }
+    // getMap = async (lat, lon) => {
+    //     const imageURL = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_COORDINATE_KEY}&center=${lat},${lon}&zoom=5`;
+    //     const response = await axios.get(imageURL);
+    //     this.setState({
+    //         mapImg: response.data.data
+    //     })
+    //     // console.log(this.state.mapImg)
+    // }
 
-    submitHandler(e) {
-        this.getLocation(e);
-        // this.getMap();
-        this.apiTest();
-    }
+    // submitHandler(e) {
+    //     this.getLocation(e);
+    //     // this.getMap();
+    //     // this.apiTest();
+    // }
 
-    apiTest = async () => {
-        try {
-            // const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
-            const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=Seattle`;
-            const response = await axios.get(url);
-            this.setState({ weatherData: response.data },
-                () => console.log(this.state.weatherData))
-        }
-        catch (error) {
-            console.error(error.message);
-        }
-    }
+    // apiTest = async () => {
+    //     try {
+    //         // const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+    //         const url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=Seattle`;
+    //         const response = await axios.get(url);
+    //         this.setState({ weatherData: response.data },
+    //             () => console.log(this.state.weatherData))
+    //     }
+    //     catch (error) {
+    //         console.error(error.message);
+    //     }
+    // }
 
     render() {
         return (
             <>
-                <Form onSubmit={this.submitHandler.bind(this)}>
+                <Form onSubmit={this.handleCitySearch}>
                 {/* <Form onSubmit={this.apiTest}> */}
                     <Form.Group>
                         <Form.Label>Enter a name of a city</Form.Label>
@@ -95,7 +78,7 @@ class Main extends React.Component {
                             <p>The city is {this.state.city.display_name}.</p>
                             {/* <img src={this.state.city.icon}/> */}
                             <p>The latitude is {this.state.city.lat} and the longitude is {this.state.city.lon}.</p>
-                            <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_COORDINATE_KEY}&center=${this.state.city.lat},${this.state.city.lon}&zoom=9`} alt="map"></img>
+                            {/* <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_COORDINATE_KEY}&center=${this.state.city.lat},${this.state.city.lon}&zoom=9`} alt="map"></img> */}
 
                         </>
 
