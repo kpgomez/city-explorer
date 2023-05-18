@@ -93,53 +93,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Feature Estimates
 
-Name of feature: Set up your React repository & API keys
-
-Estimate of time needed to complete: 1 hour
-
-Start time: 11 p.m.
-
-Finish time: 12:30 p.m.
-
-Actual time needed to complete: 1.5 hours
-
-## Feature Estimates
-
-Name of feature: Locations
-
-Estimate of time needed to complete: 2 hours
-
-Start time: 9:35 p.m.
-
-Finish time: 12:00 p.m.
-
-Actual time needed to complete: 2.5 hours
-
-## Feature Estimates
-
-Name of feature: Map
-
-Estimate of time needed to complete: 1 hour
-
-Start time: 3:15 p.m.
-
-Finish time: 5:15 p.m.
-
-Actual time needed to complete: 2 hours
-
-## Feature Estimates
-
-Name of feature: Errors
-
-Estimate of time needed to complete: 1 hour
-
-Start time: 5:25 p.m.
-
-Finish time: 6 p.m.
-
-Actual time needed to complete: 30 minutes
-
-
+<!--Lab 8 took several days, which included rewatching tons of the lecture videos and taking extensive notes. I had rebuilt both the front-end and back-end on Saturday which ended up having a lot of bugs that I couldn't figure out so I went back to the front-end and back-end that was already working and moved on from there -->
 
 ## Trello - Project Management Tool
 
@@ -147,7 +101,7 @@ Actual time needed to complete: 30 minutes
 
 ## WRRC
 
-![WRRC](./src/Screenshot%202023-05-03%20at%2011.48.12%20PM.png)
+![WRRC](./src/Screenshot%202023-05-17%20at%2010.25.49%20PM.png)
 
 [Class Demo](https://github.com/codefellows/seattle-code-301n30/tree/main/class-05/demo/city-explorer-react)
 

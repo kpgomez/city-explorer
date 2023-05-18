@@ -1,25 +1,20 @@
 import React from "react";
+import { Card, Row } from "react-bootstrap";
 
 class Weather extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            weatherData: []
-        }
-    }
-
-
     render() {
         return (
             <>
-                {this.props.weatherData.length > 0 &&
-                    this.props.weatherData.map(item =>
-                        <>
-                            <p>{item.date}</p>
-                            <p>{item.description}</p>
-                        </>
-                    )
-                }
+                <Row>
+                    {this.props.weatherData.length > 0 &&
+                        this.props.weatherData.map((day, idx) =>
+                            <Card key={idx} style={{ width: '8rem' }}>
+                                <Card.Text>{day.date}</Card.Text>
+                                <Card.Text>{day.description}</Card.Text>
+                            </Card>
+                        )
+                    }
+                </Row>
             </>
         )
     }
