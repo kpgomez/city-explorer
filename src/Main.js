@@ -4,6 +4,8 @@ import axios from "axios";
 import './Main.css';
 import { Form, Button } from "react-bootstrap";
 import Weather from './Weather';
+import Movies from "./Movies";
+
 
 class Main extends React.Component {
     constructor(props) {
@@ -42,12 +44,15 @@ class Main extends React.Component {
     handleWeatherSearch = async () => {
         const weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.city.lat}&lon=${this.state.city.lon}`;
         const response = await axios.get(weatherUrl);
-        this.setState({ weatherData: response.data});
+        this.setState({ 
+            weatherData: response.data, 
+            displayInfo: true
+        });
     }
 
 
     render() {
-        console.log(this.state);
+        console.log(this.state); //per jacob's recommendation
         return (
             <>
                 <Form onSubmit={this.handleCitySearch}>
@@ -65,6 +70,7 @@ class Main extends React.Component {
                     }
                 </Form>
                 <Weather weatherData={this.state.weatherData} />
+                <Movies movieData={this.state.movieData}/>
             </>
         )
     }
