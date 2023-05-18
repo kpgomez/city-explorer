@@ -32,17 +32,18 @@ class Main extends React.Component {
         const response = await axios.get(url)
         this.setState({ city: response.data[0] }, () => console.log(this.state.city));
         this.handleMovieSearch();
+        this.handleWeatherSearch(response.data[0].lat,response.data[0].lon);
     }
 
     handleMovieSearch = async () => {
         const url = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.searchQuery}`;
         const response = await axios.get(url);
         this.setState({ movieData: response.data });
-        this.handleWeatherSearch();
+        // this.handleWeatherSearch();
     }
 
-    handleWeatherSearch = async () => {
-        const weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.city.lat}&lon=${this.state.city.lon}`;
+    handleWeatherSearch = async (lat,lon) => {
+        const weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}&lon=${lon}`;
         const response = await axios.get(weatherUrl);
         this.setState({ 
             weatherData: response.data, 
