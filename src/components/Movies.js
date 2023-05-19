@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import Movie from './Movie';
 
 class Movies extends React.Component {

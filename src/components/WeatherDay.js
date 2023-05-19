@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 class WeatherDay extends React.Component {
     render() {
