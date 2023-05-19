@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import './Main.css';
+import './css/Main.css';
 import { Form, Button } from "react-bootstrap";
-import Weather from './Weather';
-import Movies from "./Movies";
+import Weather from './components/Weather';
+import Movies from "./components/Movies";
 
 
 class Main extends React.Component {
@@ -27,11 +27,10 @@ class Main extends React.Component {
     handleCitySearch = async (e) => {
         e.preventDefault();
         const url = `${process.env.REACT_APP_SERVER}/search?searchQuery=${this.state.searchQuery}`;
-        // const moviesUrl = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.searchQuery}`;
         const response = await axios.get(url)
         this.setState({ city: response.data[0] }, () => console.log(this.state.city));
         this.handleMovieSearch();
-        this.handleWeatherSearch(response.data[0].lat,response.data[0].lon);
+        this.handleWeatherSearch(response.data[0].lat,response.data[0].lon); //per Roger's recommendation
     }
 
     handleMovieSearch = async () => {
