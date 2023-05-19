@@ -37,10 +37,10 @@ class Main extends React.Component {
         const url = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.searchQuery}`;
         const response = await axios.get(url);
         this.setState({ movieData: response.data });
-        // this.handleWeatherSearch();
+        this.handleWeatherSearch();
     }
 
-    handleWeatherSearch = async (lat,lon) => {
+    handleWeatherSearch = async (lat, lon) => {
         const weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}&lon=${lon}`;
         const response = await axios.get(weatherUrl);
         this.setState({ 
