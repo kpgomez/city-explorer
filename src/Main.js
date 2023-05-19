@@ -28,9 +28,9 @@ class Main extends React.Component {
         e.preventDefault();
         const url = `${process.env.REACT_APP_SERVER}/search?searchQuery=${this.state.searchQuery}`;
         const response = await axios.get(url)
-        this.setState({ city: response.data[0] }, () => console.log(this.state.city));
+        this.setState({ city: response.data }, () => console.log(this.state.city));
         this.handleMovieSearch();
-        this.handleWeatherSearch(response.data[0].lat,response.data[0].lon); //per Roger's recommendation
+        this.handleWeatherSearch(response.data.lat,response.data.lon); //per Roger's recommendation
     }
 
     handleMovieSearch = async () => {
