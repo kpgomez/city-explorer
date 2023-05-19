@@ -93,7 +93,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Feature Estimates
 
-<!--Lab 8 took several days, which included rewatching tons of the lecture videos and taking extensive notes. I had rebuilt both the front-end and back-end on Saturday which ended up having a lot of bugs that I couldn't figure out so I went back to the front-end and back-end that was already working and moved on from there -->
+Name of feature: Componentize
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:20 p.m.
+
+Finish time: 10:20 p.m.
+
+Actual time needed to complete: 1 hour
 
 ## Trello - Project Management Tool
 
